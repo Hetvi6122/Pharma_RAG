@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets: never commit keys
+.env
+
+# Generated data (rebuild with `pharmarag ingest`)
+data/*
+!data/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

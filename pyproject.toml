@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pharmarag"
+version = "0.1.0"
+description = "Hybrid retrieval (BM25 + dense) over FDA drug labels, the base for a cited RAG agent."
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dense = ["sentence-transformers>=2.7"]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+pharmarag = "pharmarag.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
