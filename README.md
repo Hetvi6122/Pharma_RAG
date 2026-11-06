@@ -1,56 +1,25 @@
-# PharmaRAG
+# Stripped setting (DECODE-JOIN POC)
 
-Ask plain-English questions about prescription drugs and get answers grounded in official FDA drug labels, with citations.
+**Owner: Hetvi Patel** (stripped setting: build, verification, evaluation).
 
-![CI](https://github.com/Hetvi6122/Pharma_RAG/actions/workflows/ci.yml/badge.svg)
+Stripped = same rows, schema/table/column names, column order and types as the
+documented database. Removed: declared primary/foreign keys, UNIQUE/CHECK/NOT NULL
+constraints, indexes, views, sequences, comments, and metadata schemas (e.g. `bird_metadata`).
 
-> **Status: v0.1 (retrieval only).** Answer generation, evaluation and the agent come next.
+| Dataset | Stripped DuckDB | Status |
+|---|---|---|
+| BIRD dev | `decode_join_bird_dev_stripped.duckdb` (build script: `data/bird_stripped/`) | done, HF PR #11 |
+| KaggleDBQA | `decode_join_kaggledbqa_stripped.duckdb` | in progress |
+| FIBEN | `decode_join_fiben_stripped.duckdb` | pending |
 
-## Problem
-Drug labels are long, dense documents. Keyword search misses paraphrases ("heart attack" vs "myocardial infarction") and pure semantic search can miss exact drug names. This project combines both and keeps every result tied to a drug and label section so answers can cite their source.
-
-## Results
-| Approach | Recall@5 | MRR | Notes |
-|---|---|---|---|
-| BM25 (from scratch) | [placeholder] | [placeholder] | |
-| Dense (MiniLM) | [placeholder] | [placeholder] | |
-| Hybrid (RRF) | [placeholder] | [placeholder] | |
-
-Numbers will come from a hand-built eval set of ~50 questions (Week 2). Nothing here is estimated.
-
-## Architecture
+## Rebuild
 ```
-openFDA label API -> section-aware chunking (200 words, 40 overlap) -> BM25 index + MiniLM embeddings -> Reciprocal Rank Fusion -> top-k cited chunks
+bash data/stripped/run_stripped.sh <documented.duckdb> <stripped.duckdb>
 ```
+`make_stripped.py` rebuilds every table with CREATE TABLE AS SELECT (keeps columns, order,
+types, rows; drops constraints and comments). `verify_stripped.py` checks identical
+tables, columns, row counts and per-column hashes, and that no constraints, indexes, views,
+sequences, comments or dropped schemas remain.
 
-## Tech Stack
-Python · NumPy · sentence-transformers (MiniLM) · BM25 from scratch · pytest · ruff · GitHub Actions
-
-## Quickstart
-```bash
-git clone https://github.com/Hetvi6122/Pharma_RAG.git && cd Pharma_RAG
-pip install -e ".[dev,dense]"
-pharmarag ingest --n 500
-pharmarag search "Can acetaminophen cause liver damage?" --mode hybrid
-```
-Use `--mode bm25` to skip the embedding model. Copy `.env.example` to `.env` for keys. Keys are never committed.
-
-## Data
-[openFDA Drug Label API](https://open.fda.gov/apis/drug/label/), public domain (U.S. FDA). Downloaded data is not committed; rebuild it with `pharmarag ingest`.
-
-## Project Structure
-```
-src/pharmarag/
-  ingest.py   # openFDA download + section-aware chunking
-  bm25.py     # BM25 with an inverted index
-  dense.py    # MiniLM embeddings + cosine search (cached)
-  hybrid.py   # Reciprocal Rank Fusion
-  cli.py      # ingest / search commands
-tests/test_core.py
-```
-
-## Disclaimer
-Not medical advice. For educational and portfolio purposes only.
-
----
-Built by Hetvi Patel · [LinkedIn](https://linkedin.com/in/hetvi-patel-a9b6341a4)
+`extract_gold_keys.py` records the declared keys from the source SQLite files as
+**evaluation-only** gold. Never put its output where the pipeline can read it.
