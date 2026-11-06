@@ -50,6 +50,48 @@ def fetch_labels(n: int = 500, page_size: int = 100, pause: float = 0.3) -> list
     return labels[:n]
 
 
+def pick_labels(results: list[dict], per_drug: int) -> list[dict]:
+    """Prefer single-ingredient labels (no ' AND ' in the generic name) with the most sections."""
+    def single(lab):
+        return " AND " not in " ".join(lab.get("openfda", {}).get("generic_name", [])).upper()
+
+    def n_sections(lab):
+        return sum(1 for f in SECTIONS if lab.get(f))
+
+    ranked = sorted(results, key=lambda lab: (single(lab), n_sections(lab)), reverse=True)
+    return ranked[:per_drug]
+
+
+def fetch_labels_for_drugs(
+    generics: list[str], per_drug: int = 2, pause: float = 0.3
+) -> tuple[list[dict], list[str]]:
+    """Fetch prescription labels for specific generic names. Returns (labels, names not found)."""
+    labels, missing = [], []
+    for name in generics:
+        params = {
+            "search": f'openfda.generic_name:"{name}" AND '
+            f'openfda.product_type:"HUMAN PRESCRIPTION DRUG"',
+            "limit": 20,
+        }
+        resp = requests.get(OPENFDA_URL, params=params, timeout=30)
+        if resp.status_code == 404:  # openFDA returns 404 when nothing matches
+            missing.append(name)
+            continue
+        resp.raise_for_status()
+        labels.extend(pick_labels(resp.json().get("results", []), per_drug))
+        time.sleep(pause)
+    return labels, missing
+
+
+def dedupe(labels: list[dict]) -> list[dict]:
+    seen, out = set(), []
+    for lab in labels:
+        if lab.get("id") not in seen:
+            seen.add(lab.get("id"))
+            out.append(lab)
+    return out
+
+
 def chunk_text(text: str, size: int = 200, overlap: int = 40) -> list[str]:
     """Split text into windows of `size` words that overlap by `overlap` words."""
     if overlap >= size:

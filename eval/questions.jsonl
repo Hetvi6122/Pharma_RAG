@@ -1,0 +1,50 @@
+{"id": "q01", "generic": "metformin", "question": "What are the most common side effects of metformin?", "sections": ["Adverse Reactions"]}
+{"id": "q02", "generic": "metformin", "question": "Can someone with severe kidney problems take metformin?", "sections": ["Contraindications", "Boxed Warning", "Warnings and Precautions", "Warnings"]}
+{"id": "q03", "generic": "lisinopril", "question": "Is lisinopril safe to take during pregnancy?", "sections": ["Boxed Warning", "Warnings and Precautions", "Warnings", "Use in Specific Populations"]}
+{"id": "q04", "generic": "lisinopril", "question": "What is lisinopril used to treat?", "sections": ["Indications and Usage"]}
+{"id": "q05", "generic": "atorvastatin", "question": "Can atorvastatin cause muscle pain or muscle damage?", "sections": ["Warnings and Precautions", "Warnings", "Adverse Reactions"]}
+{"id": "q06", "generic": "atorvastatin", "question": "Which drugs interact with atorvastatin?", "sections": ["Drug Interactions", "Warnings and Precautions"]}
+{"id": "q07", "generic": "amlodipine", "question": "What is the usual starting dose of amlodipine for high blood pressure?", "sections": ["Dosage and Administration"]}
+{"id": "q08", "generic": "amlodipine", "question": "Does amlodipine cause swelling in the ankles?", "sections": ["Adverse Reactions"]}
+{"id": "q09", "generic": "levothyroxine", "question": "Should levothyroxine be used for weight loss?", "sections": ["Boxed Warning", "Indications and Usage", "Warnings and Precautions", "Warnings"]}
+{"id": "q10", "generic": "levothyroxine", "question": "How should levothyroxine be taken in relation to food?", "sections": ["Dosage and Administration"]}
+{"id": "q11", "generic": "warfarin", "question": "What is the risk of bleeding with warfarin?", "sections": ["Boxed Warning", "Warnings and Precautions", "Warnings"]}
+{"id": "q12", "generic": "warfarin", "question": "Which medications change how well warfarin works?", "sections": ["Drug Interactions", "Warnings and Precautions"]}
+{"id": "q13", "generic": "sertraline", "question": "Does sertraline increase suicidal thoughts in young people?", "sections": ["Boxed Warning", "Warnings and Precautions"]}
+{"id": "q14", "generic": "sertraline", "question": "What conditions is sertraline approved for?", "sections": ["Indications and Usage"]}
+{"id": "q15", "generic": "omeprazole", "question": "Can long-term omeprazole use cause bone fractures?", "sections": ["Warnings and Precautions", "Warnings"]}
+{"id": "q16", "generic": "omeprazole", "question": "What does omeprazole treat?", "sections": ["Indications and Usage"]}
+{"id": "q17", "generic": "losartan", "question": "Can losartan be taken while pregnant?", "sections": ["Boxed Warning", "Warnings and Precautions", "Warnings", "Use in Specific Populations", "Contraindications"]}
+{"id": "q18", "generic": "losartan", "question": "What are the side effects of losartan?", "sections": ["Adverse Reactions"]}
+{"id": "q19", "generic": "gabapentin", "question": "What is gabapentin prescribed for?", "sections": ["Indications and Usage"]}
+{"id": "q20", "generic": "gabapentin", "question": "Can gabapentin cause breathing problems when taken with opioids?", "sections": ["Warnings and Precautions", "Drug Interactions"]}
+{"id": "q21", "generic": "clopidogrel", "question": "Why might clopidogrel not work well in poor CYP2C19 metabolizers?", "sections": ["Boxed Warning", "Warnings and Precautions", "Drug Interactions"]}
+{"id": "q22", "generic": "clopidogrel", "question": "Who should not take clopidogrel?", "sections": ["Contraindications"]}
+{"id": "q23", "generic": "metoprolol", "question": "Is it dangerous to stop taking metoprolol suddenly?", "sections": ["Boxed Warning", "Warnings and Precautions", "Warnings"]}
+{"id": "q24", "generic": "metoprolol", "question": "When should metoprolol not be used?", "sections": ["Contraindications"]}
+{"id": "q25", "generic": "montelukast", "question": "Can montelukast cause mood changes or nightmares?", "sections": ["Boxed Warning", "Warnings and Precautions", "Adverse Reactions"]}
+{"id": "q26", "generic": "montelukast", "question": "What is montelukast used for?", "sections": ["Indications and Usage"]}
+{"id": "q27", "generic": "fluoxetine", "question": "Can fluoxetine be taken together with MAO inhibitors?", "sections": ["Contraindications", "Drug Interactions", "Warnings and Precautions"]}
+{"id": "q28", "generic": "fluoxetine", "question": "What are common side effects of fluoxetine?", "sections": ["Adverse Reactions"]}
+{"id": "q29", "generic": "escitalopram", "question": "What dose of escitalopram is recommended for adults with depression?", "sections": ["Dosage and Administration"]}
+{"id": "q30", "generic": "escitalopram", "question": "Can escitalopram cause serotonin syndrome?", "sections": ["Warnings and Precautions", "Drug Interactions", "Contraindications"]}
+{"id": "q31", "generic": "furosemide", "question": "What electrolyte problems can furosemide cause?", "sections": ["Boxed Warning", "Warnings and Precautions", "Warnings", "Adverse Reactions"]}
+{"id": "q32", "generic": "furosemide", "question": "What is furosemide used for?", "sections": ["Indications and Usage"]}
+{"id": "q33", "generic": "tramadol", "question": "Is tramadol addictive?", "sections": ["Boxed Warning", "Warnings and Precautions"]}
+{"id": "q34", "generic": "tramadol", "question": "Can tramadol cause seizures?", "sections": ["Warnings and Precautions", "Warnings"]}
+{"id": "q35", "generic": "alprazolam", "question": "What happens if alprazolam is taken with opioids?", "sections": ["Boxed Warning", "Warnings and Precautions", "Drug Interactions"]}
+{"id": "q36", "generic": "alprazolam", "question": "What is alprazolam approved to treat?", "sections": ["Indications and Usage"]}
+{"id": "q37", "generic": "prednisone", "question": "Does prednisone increase the risk of infections?", "sections": ["Warnings and Precautions", "Warnings"]}
+{"id": "q38", "generic": "prednisone", "question": "What conditions is prednisone used for?", "sections": ["Indications and Usage"]}
+{"id": "q39", "generic": "amoxicillin", "question": "Who should not take amoxicillin?", "sections": ["Contraindications"]}
+{"id": "q40", "generic": "amoxicillin", "question": "Can amoxicillin cause diarrhea or C. difficile infection?", "sections": ["Warnings and Precautions", "Warnings", "Adverse Reactions"]}
+{"id": "q41", "generic": "simvastatin", "question": "Should simvastatin be taken with grapefruit juice?", "sections": ["Drug Interactions", "Warnings and Precautions", "Contraindications", "Dosage and Administration"]}
+{"id": "q42", "generic": "simvastatin", "question": "What is the maximum recommended dose of simvastatin?", "sections": ["Dosage and Administration", "Warnings and Precautions"]}
+{"id": "q43", "generic": "hydrochlorothiazide", "question": "What is hydrochlorothiazide used to treat?", "sections": ["Indications and Usage"]}
+{"id": "q44", "generic": "hydrochlorothiazide", "question": "What are the side effects of hydrochlorothiazide?", "sections": ["Adverse Reactions"]}
+{"id": "q45", "generic": "citalopram", "question": "Does citalopram affect heart rhythm or cause QT prolongation?", "sections": ["Warnings and Precautions", "Contraindications", "Warnings"]}
+{"id": "q46", "generic": "citalopram", "question": "What is the maximum daily dose of citalopram for older adults?", "sections": ["Dosage and Administration", "Warnings and Precautions", "Use in Specific Populations"]}
+{"id": "q47", "generic": "apixaban", "question": "What happens if apixaban is stopped early?", "sections": ["Boxed Warning", "Warnings and Precautions"]}
+{"id": "q48", "generic": "apixaban", "question": "Which drugs should not be combined with apixaban?", "sections": ["Drug Interactions", "Dosage and Administration", "Warnings and Precautions"]}
+{"id": "q49", "generic": "duloxetine", "question": "Can duloxetine cause liver damage?", "sections": ["Warnings and Precautions"]}
+{"id": "q50", "generic": "duloxetine", "question": "What is duloxetine used to treat?", "sections": ["Indications and Usage"]}
